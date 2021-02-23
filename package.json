@@ -1,0 +1,17 @@
+{
+  "name": "networking-tools",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Thomas Feuerborn",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-packager": "^15.2.0"
+  }
+}

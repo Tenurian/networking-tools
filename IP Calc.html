@@ -1,0 +1,70 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>IP Calculator - Mod 6</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<nav class="flexContainer flexRow">
+			<a href="./index.html"><button>Main Menu</button></a>
+			<a href='./Checker.html'><button>Subnet IP Answer Checker</button></a>
+			<a href='./Hex Trace Tool.html'><button>Hex Trace Decoder</button></a>
+		</nav>
+		<h1 style="text-align: center;">Subnet IP Calculator</h1>
+		<div style="text-align: center; width: 100vw;">
+			<p class="ignoreFloat" text-align="center" >Given IP and CIDR: <input type="text" id="givenIP" placeholder="192.168.0.1/24" /></p>
+		</div>
+		<div class="flexContainer flexCol">
+			<div class="flexContainer flexRow">
+				<div class="flexContainer flexCol">
+					<p>Network Class: <input disabled id="networkClass" placeholder="C/24" /></p>
+				</div>
+				<div class="flexContainer flexCol applyBorders">
+					<p>Working Octet: <input disabled id="workingOctet" placeholder="3"/></p>
+				</div>
+				<div class="flexContainer flexCol">
+					<p>Bit Value: <input disabled id="bitValue" placeholder="1"/></p>
+				</div>
+			</div>
+			<div class="flexContainer flexRow ignoreBorder">
+				<div class="flexContainer flexCol fifty">
+					<div class="flexContainer flexRow">
+						<p>N: <input disabled id="N" placeholder="192.168.0.0/24"/></p>
+					</div>
+					<div class="flexContainer flexRow">
+						<p>F: <input disabled id="F" placeholder="192.168.0.1"/></p>
+					</div>
+					<div class="flexContainer flexRow">
+						<p>L: <input disabled id="L" placeholder="192.168.0.254"/></p>
+					</div>
+					<div class="flexContainer flexRow">
+						<p>B: <input disabled id="B" placeholder="192.168.0.255"/></p>
+					</div>
+				</div>
+				<div class="flexContainer flexCol fifty">
+					<div class="flexContainer flexRow">
+						<p>Subnet Mask: <input disabled id="mask" placeholder="255.255.255.0"/></p>
+					</div>
+					<div class="flexContainer flexRow">
+						<p>Number of Hosts: <input disabled id="numHosts" placeholder="254"/></p>
+					</div>
+					<div class="flexContainer flexRow">
+						<p>Number of Networks: <input disabled id="numNets" placeholder="1"/></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="text-align: center; width: 100vw;">
+			<button id="calc" onClick="doCalc()">Calculate</button>
+		</div>
+		<br />
+		<div id="tableContainer">
+			<div>
+				<img id="SubnettingTable" src="Subnetting_Table.png" />
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

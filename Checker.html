@@ -1,0 +1,80 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>IP Checker - Mod 6</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<nav class="flexContainer flexRow">
+			<a href="./index.html"><button>Main Menu</button></a>
+			<a href='./IP Calc.html'><button>Subnet IP Calculator</button></a>
+			<a href='./Hex Trace Tool.html'><button>Hex Trace Decoder</button></a>
+		</nav>
+		<h1 style="text-align: center;">Subnet IP Answer Checker</h1>
+		<div style="text-align: center; width: 100vw;">
+			<p class="ignoreFloat" text-align="center" >Given IP and CIDR: <input type="text" id="givenIP" placeholder="192.168.0.1/24" /></p>
+		</div>
+		<div class="flexContainer flexCol">
+			<div id="topRow" class="flexContainer flexRow">
+				<div class="flexContainer flexCol">
+					<p>Network Class: <input  id="networkClass" placeholder="C/24" /></p>
+					<div id="networkClassFeedback" class="feedback"></div>
+				</div>
+				<div class="flexContainer flexCol applyBorders">
+					<p>Working Octet: <input  id="workingOctet" placeholder="3" /></p>
+					<div id="workingOctetFeedback" class="feedback"></div>
+				</div>
+				<div class="flexContainer flexCol">
+					<p>Bit Value: <input  id="bitValue" placeholder="1" /></p>
+					<div id="bitValueFeedback" class="feedback"></div>
+				</div>
+			</div>
+			<div class="flexContainer flexRow ignoreBorder">
+				<div class="flexContainer flexCol fifty">
+					<div class="flexContainer flexCol forceBorder">
+						<p>N: <input  id="N" placeholder="192.168.0.0/24" /></p>
+						<div id="NFeedback" class="feedback"></div>
+					</div>
+					<div class="flexContainer flexCol forceBorder">
+						<p>F: <input  id="F" placeholder="192.168.0.1" /></p>
+						<div id="FFeedback" class="feedback"></div>
+					</div>
+					<div class="flexContainer flexCol forceBorder">
+						<p>L: <input  id="L" placeholder="192.168.0.254" /></p>
+						<div id="LFeedback" class="feedback"></div>
+					</div>
+					<div class="flexContainer flexCol forceBorder">
+						<p>B: <input  id="B" placeholder="192.168.0.255" /></p>
+						<div id="BFeedback" class="feedback"></div>
+					</div>
+				</div>
+				<div class="flexContainer flexCol fifty">
+					<div class="flexContainer flexCol forceBorder">
+						<p>Subnet Mask: <input  id="mask" placeholder="255.255.255.0" /></p>
+						<div id="maskFeedback" class="feedback"></div>
+					</div>
+					<div class="flexContainer flexCol forceBorder">
+						<p>Number of Hosts: <input  id="numHosts" placeholder="254" /></p>
+						<div id="numHostsFeedback" class="feedback"></div>
+					</div>
+					<div class="flexContainer flexCol forceBorder">
+						<p>Number of Networks: <input  id="numNets" placeholder="1" /></p>
+						<div id="numNetsFeedback" class="feedback"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="text-align: center; width: 100vw;">
+			<button id="calc" onClick="doCheck()">Check Answers</button>
+		</div>
+		<br />
+		<div id="tableContainer">
+			<div>
+				<img id="SubnettingTable" src="Subnetting_Table.png" />
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

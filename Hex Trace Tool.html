@@ -1,0 +1,105 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>Hex Trace Tool</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<nav class="flexContainer flexRow">
+			<a href="./index.html"><button>Main Menu</button></a>
+			<a href='./IP Calc.html'><button>IP Calc</button></a>
+			<a href='./Checker.html'><button>IP Answer Checker</button></a>
+		</nav>
+		<h1 style="text-align: center;">Hex Trace Decoder</h1>
+		<div class="flexContainer">		
+			<div class="flexChild flexCol justifyCenter" style="min-width: 100%">
+				<h3 class="flexChild">Paste the Hex Trace here:</h3>
+				<div class="flexChild">
+					<textarea id="hexTrace" placeholder="F8 75 88 14 03 AA F8 98    B9 11 B8 C6 08 00 45 00
+00 2C 00 00 00 00 80 06    B0 B2 06 04 17 76 12 25
+17 76 06 F7 00 16 26 98    50 6C EF 94 28 97 60 12
+10 20 E0 81 00 00 02 04    05 B4 00 00
+" cols="50" rows="4" ></textarea>
+				</div>
+				<button class="flexChild" onclick="doCalc()">Decode</button>
+				<button id="toggleHighlights" class="flexChild hidden" onclick="toggleHighlights()">Toggle Highlights</button>
+			</div>
+			<div class="flexChild flexCol">
+				<div class="flexChild">
+				</div>
+			</div>
+		</div>
+		
+		<div class="flexContainer childrenCenter">
+			<div id="highlighterContainer" class="whiteBG hidden">
+				<pre><code id="highlighter"></code></pre>
+			</div>
+		</div>
+		
+		<div class="flexContainer">
+			<div class="flexRow flexContainer">
+				<div class="flexCol forceBorderChildren" style="padding: 10px;">
+					<div>
+						<h3>Layer 2: <input placeholder="Layer 2" id="L2" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Layer 3: <input class="inactive highlighted highlight2" placeholder="Layer 3" id="L3" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Layer 4: <input class="inactive highlighted highlight3" placeholder="Layer 4" id="L4" disabled></input></h3>
+					</div>
+					<!--
+					<div>
+						<h3>Layer 7: <input placeholder="Layer 7" id="L4" disabled></input></h3>
+					</div>
+					-->
+				</div>
+				<div class="flexCol applyBorders forceBorderChildren" style="padding: 10px;">
+					<div>
+						<h3>Source MAC: <input class="inactive highlighted highlight0" placeholder="00:00:00:00:00:00" id="SMAC" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Target MAC: <input class="inactive highlighted highlight1" placeholder="00:00:00:00:00:00" id="TMAC" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Source IP: <input class="inactive highlighted highlight4" placeholder="192.168.0.1" id="SIP" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Target IP: <input class="inactive highlighted highlight5" placeholder="192.168.0.1" id="TIP" disabled></input></h3>
+					</div>
+				</div>
+				<div class="flexCol forceBorderChildren" style="padding: 10px;">
+					<div>
+						<h3>Source Port: <input class="inactive highlighted highlight6" placeholder="8080" id="SPort" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Target Port: <input class="inactive highlighted highlight7" placeholder="8080" id="TPort" disabled></input></h3>
+					</div>
+					<div>
+						<h3>Server IP: <input placeholder="192.168.0.1" id="ServerIP" disabled></input></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 
+			Layer2: 	
+			Layer3: 	
+			Layer4: 	
+		   ~Layer7:~ 	
+		   ---------
+			SMAC: 		
+			TMAC: 		
+			TIP: 		
+			SIP:	
+		   ---------
+			SourcePort: 
+			TargetPort: 
+			ServerIP: 	
+		-->
+	
+	<script src="tracer.js"></script>
+	</body>
+</html>
